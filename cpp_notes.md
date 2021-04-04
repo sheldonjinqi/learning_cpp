@@ -9,4 +9,4 @@
 * `std::istringstrem` can be used to process strings. 
   - The extraction operator `>>` writes the stream to the variable on the right of the operator and returns the `istringstream` object 
   - `istringstream` can be used as boolean, e.g.(`my_stream >> n`)
-* `enum`: defines a custom type with values restricted to a fixed range. e.g(```C++ enum class Color {white, black, blue, red};```)
+* `enum`: defines a custom type with values restricted to a fixed range. e.g( enum class Color {white, black, blue, red}; )
