@@ -69,4 +69,28 @@ int main() {
 * outter scope value can be retrived if the inner scope value is gone.
 * The address of any memory location in the stack is larger than the address of any memory location in the heap.
 
+### Constructor
+* constructor is used to create objects
+* c++ compilers provides **automatic default constructor** that initialize everything to default value if no other constructor provided.
+* custom default constructor, specifing default state of objects
+  * member function with same name of class
+  * take zero parameters
+  * does not have return type
+* non-default constructors that **require** arguments
+* if any constructor is defined, an automatic default constructor is not defined.
 
+### Copy Constructor
+* automatic copy constructor is defined if no copy constructor is defined 
+* custom copy constructor
+ * a class constructor 
+ * exacltly one argument, must be a const reference of the same type as the class
+* invocation:
+ * passed an object as parameter by value 
+ * object returned from function by value 
+ * initialize a new objec
+ * `=` assignment operator: assignes a value to an **existing** obejct
+ * custom assignment operator
+  * public member function of the class
+  * function name `operator=`
+  * return value of a reference of the calss type 
+  * exactly one argument, const reference of the class type 
