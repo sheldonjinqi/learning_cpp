@@ -94,3 +94,19 @@ int main() {
   * function name `operator=`
   * return value of a reference of the calss type 
   * exactly one argument, const reference of the class type 
+### variable storage
+* by default stored directly in memory
+* storage by pointer
+* storage by reference (takes zero-bit of memory)
+ * must be assigned when variable is initialized
+* never return a reference to a stack variable created on stack of current function.
+### Destructor
+* destructor should **never** be called directly, called by system.
+* function name: name of class preceded by tilde ·~·
+* zero arguments and no return
+* custom destructor is essential when an object allocates an external resource that must be closed , e.g( heap memory, open files, shared memory
+* don't try to derefence a uninitialized variable. 
+* Plain built-in types, such as int, that are not initialized will have unknown values.
+# modern range-based for loop 
+`for ( temporary variable declaration : container ) { loop body }`
+* if you declare an ordinary temporary variable in the loop, it just gets a copy of the current loop item by value.
