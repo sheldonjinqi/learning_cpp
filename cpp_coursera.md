@@ -110,3 +110,9 @@ int main() {
 # modern range-based for loop 
 `for ( temporary variable declaration : container ) { loop body }`
 * if you declare an ordinary temporary variable in the loop, it just gets a copy of the current loop item by value.
+* template type: can take on different types , e.g(std::vector) 
+ * initialize: std::vector<Typename> variablename
+ * `::push_back(T); add to back of array;
+ * `::operator[]` to access specific elemnt
+ * v.size returns the size 
+ * ostream friend function allows to print out the object **double check** `friend std::ostream& operator<<(std::ostream & os, const Game & game);`
