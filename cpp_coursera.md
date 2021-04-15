@@ -116,3 +116,4 @@ int main() {
  * `::operator[]` to access specific elemnt
  * v.size returns the size 
  * ostream friend function allows to print out the object **double check** `friend std::ostream& operator<<(std::ostream & os, const Game & game);`
+ * `this` pointer is only valid in member functions.
