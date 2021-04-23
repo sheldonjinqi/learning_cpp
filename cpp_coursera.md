@@ -117,3 +117,45 @@ int main() {
  * v.size returns the size 
  * ostream friend function allows to print out the object **double check** `friend std::ostream& operator<<(std::ostream & os, const Game & game);`
  * `this` pointer is only valid in member functions.
+
+## Ordered Data Structures
+### Array 
+* stores data in blocks of **sequential** memory, index starts at 0.
+* All data in an array must be of the **same** type
+* have a fixed capacity, has a maximum number of elements 
+* need to create a larger array and copy it over, when new element needs to be added to a full array.
+* **std::vector** grows in size automatically, usually double the size 
+### Linked memory
+* stores a data together with a pointer to the location in memory of next list node
+* A list node refers to pair of both data and the link(pointer)
+*  LIstNode elements linked together form a linked list
+* head pointer stores the link to the begining of the list 
+* runtime grows based on the size of the list when trying to access a given index
+* capacity is bounded only by the memory available on the system, not fixed.
+* must contain the same type of instance
+* pointer to nullptr marks the end of the list
+### Runtime analysis
+* big O stands for how time complexity increases with the size of input
+* average work per element: amertized run time(some operations take longer, expanding the array here.) O(n)/n = O(1)*.
+* Amortized analysis doesn't naively multiply the number of invocations with the worst case for one invocation. e.g. resizing an array, sometimes need to create a new array and coply over.
+### Array and List opearations
+* Finding a value
+ * binary search for sorted array is O(lg(n))
+ * for unsorted array O(n)
+ * all list O(n) 
+* Insert After & Delete After
+  * O(n) for array
+  * O(1) for linked list
+### Queue
+* First-in first out  
+* **Abstract Data Type** is how data interacts with the structure.
+  * create _ create empty queue
+  * push -> adds data to he back
+  * pop -> remove from front
+  * empty -> returns true if queue is empty
+* included in std::queuev 
+* can be implemented by both array or linked list with all four above operations in O(1)
+### Stack
+* last-in first-out
+* adt is same as queue
+
