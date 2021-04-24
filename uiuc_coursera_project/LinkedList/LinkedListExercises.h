@@ -86,7 +86,45 @@ void LinkedList<T>::insertOrdered(const T& newData) {
   // -----------------------------------------------------------
   // Please implement this function according to the description
   // above and in the instructions PDF.
+  LinkedList::Node *newNode = new LinkedList::Node(newData); // create a new node that needs to be inserted
+  LinkedList::Node * currNode = head_;
+  // check if list is empty 
+  if (! currNode){
+      head_ = newNode; 
+      tail_ = newNode;
+      size_ = 1 ;
+      return ; 
+    }
+  // loop through the provided list 
 
+  while(currNode){
+    // then check if the current node has data larger than the new node
+    if(currNode->data > newData){
+    // check if the new node needs to be inserted at the front
+      if(head_ == currNode){
+        pushFront(newData);
+        return;
+      }
+      else{
+        LinkedList::Node * oldPrevNode = currNode->prev ; 
+        oldPrevNode->next = newNode ; 
+        newNode->prev = oldPrevNode;
+        newNode->next = currNode;
+        currNode->prev = newNode;
+        size_ ++;
+        return; 
+      }
+    }
+    currNode = currNode->next;
+  }
+  pushBack(newData);
+
+    
+  
+  // none of the data in the LinkedList is larger than the data
+  // insert at the back 
+  // pushBack(newData);
+  // size_ ++ ;
   // Hints:
   // Make your new node on the heap and then find where it needs to
   // go in the list. A good way to do this is by considering special
@@ -228,7 +266,39 @@ LinkedList<T> LinkedList<T>::merge(const LinkedList<T>& other) const {
   // -----------------------------------------------------------
   // Please implement this function according to the description
   // above and in the instructions PDF.
-
+  Node *cur_left = left.head_;
+  Node *cur_right = other.head_;
+  // std::cout<<"test: "<<cur_left->data<<std::endl;
+  while(cur_left || cur_right){
+    // std::cout<<"running"<<std::endl;
+    while(cur_left && cur_right){
+      // std::cout<<"both list are not at the end"<<std::endl<<"left num "<< cur_left->data<< "\t"<<"right num "<<cur_right->data<<std::endl;
+      if(cur_left->data < cur_right->data){
+        merged.pushBack(cur_left->data);
+        // std::cout<<"inserting from left "<<cur_left->data<<std::endl;
+        cur_left = cur_left->next;
+      }
+      else{
+        merged.pushBack(cur_right->data);
+        // std::cout<<"inserting from right "<<cur_right->data<<std::endl;
+        cur_right = cur_right->next; 
+        
+      }
+    }
+  
+  if(! cur_left && ! cur_right){
+    return merged;
+  }
+  else if (! cur_left){
+     merged.pushBack(cur_right->data);
+    cur_right = cur_right->next;
+  }
+  else {
+    merged.pushBack(cur_left->data);
+    cur_left = cur_left->next;
+  }
+  }
+ 
   // Hints:
   // 1. Assuming that the left and right lists are already sorted, remember
   //    that the smallest items are already available at the front. You can

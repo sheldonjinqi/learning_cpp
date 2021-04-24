@@ -133,7 +133,6 @@ void informalTests() {
     l.pushBack(6);
     l.pushBack(8);
     l.pushBack(9);
-    std::cout << "List: " << l << std::endl;
     l.insertOrdered(7);
     l.insertOrdered(4);
     l.insertOrdered(-1);
@@ -142,7 +141,6 @@ void informalTests() {
     std::cout << "List: " << l << std::endl;
     std::cout << "Expected: " << expected << std::endl;
     if (l != expected) errorReaction("wrong result");
-
     std::cout << "Testing copy constructor:" << std::endl;
     LinkedList<int> l2(l);
     std::cout << "Copy: " << l2 << std::endl;
