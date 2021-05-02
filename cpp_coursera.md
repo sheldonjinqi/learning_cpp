@@ -159,3 +159,55 @@ int main() {
 * last-in first-out
 * adt is same as queue
 
+### Tree
+* each element is a **node**, each connection between nodes is an **edge**
+* every node must contain one and only one root node.
+* leaf nodes: no outgoing nodes 
+* to be a tree: 1. must have a root 2.must have directe edges 3. must not have a cycle
+* a tree is a rooted, idrected and acylclic structure 
+* binary tree: every ode has **at most two** children, either left or right child 
+  * height: number of edges in the **longest** path from root to leaf
+  * binary tree is **full** if evey node has either zero or two children
+  * is perfrect if all interior nodes have two children and leaves are at the same level
+  * is complete, if the tree is perfect up until the last level and all leaf nodes are pushed to the left.
+* Tree traversal(require go through every single node while search doesn't require to visit every node )
+  * preorder: shout, lelft ,right
+  * inorder: left, shout, right
+  * post-order: left, right, shout
+  * level-order: visit a level a time 
+* Binary search tree 
+  * Nodes in the left subtree are less than the root 
+  * Nodes in the right subtree are greater than the root 
+  * worst-case: go through the longest path, O(h) where h is the height of the tree. O(h) is bounded by O(n)
+* Dictionary associates a **key** with **data**
+  * key has to be a unique identifier
+  * ADT: find, insert (adds a key/data pair), remove(removes a key) , emptuy(check if dict is empty 
+  * When remove a node, need to consider the number of children the node have 
+  * In-order predecessor: the previous node in an in-order traversal of a BST(right most node of the left subtree)
+  * n! ways to insert n number of variables to form a bst tree
+    * always the right-mode node in the node's left sub-tree  
+  ![image](https://user-images.githubusercontent.com/37092479/116792953-cf4f6980-aa91-11eb-9614-8c671ec68b2d.png)
+  * height balance factor is the difference in height between left and right subtreas (right minus left)
+  * Balanced BST, every node's balance factor has a mgnitude of **0 or 1** (-1,0,1)
+  * number of nullptr for a binary tree is # of node +1 (for every new node, there is a net increase of one pointer to nullptr)
+  * BST rotation, transforms a stick into a mountain by raising the middle node 
+  * always transform an elbow to a stick
+  * 4 possible BST rotations: L, R, LR, RL, run in O(1) time
+* AVL Tress:
+  * store the height of every node as part of the node to  compute balance factor quickly 
+  * insert: 1.insert at proper place 2. check for imbalace 3. rotate, if necessary 4. update height 
+  * Every node in an AVL tree has a height balance factor of -1, 0 or 1
+* B-Tree
+  * O() time assumes uniform access time to single data. 
+  * create a data structure to perform well both on memory and disk
+  * a node can have several keys 
+  * order is maximum number keys a node can have + 1 
+  * each internal node can have at most **m** children
+  * all keys within a node are in sorted order
+  * a root node can be a leaf or have **[2,m]** children
+  * each non-root,internal node has **[ceil(m/2),m]** children
+  * all leaves are on same level
+  * height of the BTree determines maximum number of seeks 
+  * height of the structure is logm(n)
+  * number of seeks is no more than logm(n)
+
