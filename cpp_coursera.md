@@ -210,4 +210,21 @@ int main() {
   * height of the BTree determines maximum number of seeks 
   * height of the structure is logm(n)
   * number of seeks is no more than logm(n)
+### Heap 
+* every child node is larger than the parent
+* A **complete** binary tree T is min-heap if 
+  * T={}
+  * T={r,T_l,T_r} where **r** is less than the roots of {T_l,T_r} and {T_l,T_r} are min-heaps
+  * for min heap, parent = i/2, child(left) = i*2, child(right) = i*2+1/
+* Insert 
+  * check if children is larger than parent 
+* Remove
+  * Always remove the minimum value, root of the tree
+  * swap the root with the last element, swap with smallert child  
+* build heap in O(n)
+  *  Create a complete tree of the items in any order, then call heapifyDown on every non-leaf node from the bottom of the tree up to the root
+* heap sort: n x lg(n)
+  * build heap O(n)
+  * n x remove O(lg(n))
+  * Swap elements to order  
 
