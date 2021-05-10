@@ -228,3 +228,29 @@ int main() {
   * n x remove O(lg(n))
   * Swap elements to order  
 
+# Unordered data structure
+* A hash table consists of three things： 
+  * Hash Function
+  * An Array 
+  * Collision Handling Strategy（multiple keys to one value）
+* Hash function
+  * transfers an input into a number 
+  * onto function: That every single element in the array is full, and we can map every single element into our data onto that array
+  * consists of: 
+  * 1. hash(transform input into int) 
+  * 2. compression %N
+  * requirement for Hash
+  * computation time: constant runtime O(1)
+  * deterministic:
+  * satisfy the SUHA(simple uniform hashing assumption): uniform distribution of hashing random key through entire key space.
+* collision handling 
+  * separate chainin with linked list : insert the collision at the begining of linked list 
+  * load factor: n/N(#elements in table / size of table)
+  * probe-based hashing: find an empty space in array
+  * double hashing(prevent primary clustering): use a second hash function to handle cllision 
+  * separate chains is better for big record 
+  * double hashing has higher structure speed 
+  * hash table replaces dictionary 
+  * hash table can't do nearest neighbor 
+* std::unordered_map is the hash table.
+
