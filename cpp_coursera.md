@@ -257,4 +257,19 @@ int main() {
 *  at function will search for a given key and return a reference like [], but at will throw an exception if the key is not found, instead of modifying the map.
 *  find function, which actually returns an iterator type, which is like a special pointer. The iterator points to a key-value
 pair found, or otherwise to the map’s end iterator given by end().
+### Disjoint Sets
+* disjoint set is a collection of sets  and each set has a representative member
+* elements in the set are equivalent 
+* **find** operation returns the identity element of the set that contains the number that are looking for
+* identity element has to be unique and usually is the first element of the set 
+* uptree improves the update speed when union sets but not the ideal case, but find operation could be slow when its one long linked tree. desire: short and flat tree 
+* smart union use -h-1 as value for the root node instead of -1. 
+* union by height, put the shorter tree to the higher tree. keep the height of the tree as small as possible. no change to the total height, but changed the height of the nodes in shorter tree
+* union by size, minimize the number of nodes that increase in height 
+* both by height or by size, guaruantee the height of the tree is log(n)
+* path compression, point every node that went through to the root node.
+* iterated log: number of times you can take a log of a number. log*(n)=0 if n<=1 and 1+log*8(log(n)) when n >1 . 
+* m find and union operations result in the worst case running time of O(m*lg*(n)),O(1)*
+### Graphs
+
 
