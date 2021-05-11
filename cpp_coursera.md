@@ -253,4 +253,8 @@ int main() {
   * hash table replaces dictionary 
   * hash table can't do nearest neighbor 
 * std::unordered_map is the hash table.
+*  [] can only be used on non-const instances of a map
+*  at function will search for a given key and return a reference like [], but at will throw an exception if the key is not found, instead of modifying the map.
+*  find function, which actually returns an iterator type, which is like a special pointer. The iterator points to a key-value
+pair found, or otherwise to the map’s end iterator given by end().
 
