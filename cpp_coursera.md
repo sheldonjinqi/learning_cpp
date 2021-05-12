@@ -280,5 +280,21 @@ pair found, or otherwise to the map’s end iterator given by end().
 * adjacency matrix is faster checking if two nodes are adjacent and getting incident edges. but slower inserting/
 * adjacency list is fast on checking incident edges and remove vertex.
 * cycle: two or more distinct paths between two vertices
+* BFS Traversal uses a queue, enque the adjacent element that hasn't been visted of added 
+* BFS traversal supports disjoint sets, and detects cycle, running time n+2m, O(n+m) or O(n^2)
+* BFS only gives shortest path from starting vertex to a vertex but not between two vertices
+* DFS traversal uses a stack, running time O(n+m) same as BFS 
+* minimum spanning tree: tree connects all nodes with least amount of edges 
+* Kruskal's algorithm
+  * keeps a heap that has an organized list with shortest edge on the top
+  * keeps a disjoint set of nodes 
+  * remove shortest edge and union corresponding node sets, if the nodes are not in the same set, add the edge to MST.  
+  * running time O(mlog(m)) for both heap and sorted array implementation 
+* Prim's Algorithm 
+  * find the minimum edge connects the labeled set and unlabeled set, repeat 
+  * running time: O(mlg(n)+nlg(n)) using heap and adj. list when sparse O(mlg(m)) , O(n^2lg(n)) in dense graph 
+* Dijkstra algorithm would have trouble when having negative weights 
+* dijkstra works fine on undirected graphh
+* Dijkstra running time O(m+nlg(n), is optimal, using febonacci heap
 
 
