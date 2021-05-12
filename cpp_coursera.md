@@ -271,5 +271,14 @@ pair found, or otherwise to the map’s end iterator given by end().
 * iterated log: number of times you can take a log of a number. log*(n)=0 if n<=1 and 1+log*8(log(n)) when n >1 . 
 * m find and union operations result in the worst case running time of O(m*lg*(n)),O(1)*
 ### Graphs
+* incident edge: edge directly to the node 
+* degree: number of incident edges connected to the node 
+* cycle: path that begin and end at the same vertex 
+* simple graph: no self loops or multi-edges 
+* maximum edges for simple graph， n(n-1)/2
+* can be implemented using edge list, adjacency matrix and adjacency list 
+* adjacency matrix is faster checking if two nodes are adjacent and getting incident edges. but slower inserting/
+* adjacency list is fast on checking incident edges and remove vertex.
+* cycle: two or more distinct paths between two vertices
 
 
