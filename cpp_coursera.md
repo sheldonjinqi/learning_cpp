@@ -243,6 +243,8 @@ int main() {
   * computation time: constant runtime O(1)
   * deterministic:
   * satisfy the SUHA(simple uniform hashing assumption): uniform distribution of hashing random key through entire key space.
+  * hashing of string take _O(n)_ time 
+  * Comparing two strings in O(1) time complexity
 * collision handling 
   * separate chainin with linked list : insert the collision at the begining of linked list 
   * load factor: n/N(#elements in table / size of table)
